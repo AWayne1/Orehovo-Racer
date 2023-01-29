@@ -30,7 +30,7 @@ def Press_Key_shortcut():
             if event.type == QUIT:
                 Exit()
             if event.type == KEYDOWN:
-                if event.key == K_ESCAPE:  # escape quits
+                if event.key == K_ESCAPE:
                     Exit()
                 return
 
@@ -177,6 +177,7 @@ while (counting_seconds > 0):
 
         txt_objects('Счет: %s' % (score), fontsize, screen_display_window, 128, 0)
         txt_objects('Лучший счет: %s' % (highest_scores), fontsize, screen_display_window, 128, 20)
+        txt_objects('Ваши жизни: %s / 3' % (counting_seconds), fontsize, screen_display_window, 128, 40)
 
         screen_display_window.blit(player_car_photo, gamer_Rect)
 
@@ -185,7 +186,7 @@ while (counting_seconds > 0):
 
         pygame.display.update()
 
-        if player_crash(gamer_Rect, opponent):
+        if player_crash(gamer_Rect, opponent):  # Лучший рекорд
             if score > highest_scores:
                 g = open("datafile/save.dat", 'w')
                 g.write(str(score))
