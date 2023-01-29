@@ -63,7 +63,9 @@ computer_car_photo = pygame.image.load('images/car3.png')
 another = [computer_car3, computer_car4, computer_car_photo]
 w_left = pygame.image.load('images/left_side.png')
 w_right = pygame.image.load('images/right_side.png')
+zastavka = pygame.image.load('images/Orehovo-Racer1.png')
 
+screen_display_window.blit(zastavka, (0, 0))
 txt_objects('Чтобы начать - нажмите любую кнопку', fontsize, screen_display_window,
             (screen_width / 3) - 30, (screen_height / 3))
 txt_objects('Удачи!', fontsize, screen_display_window,
@@ -198,6 +200,7 @@ while (counting_seconds > 0):
 
     counting_seconds = counting_seconds - 1
     if (counting_seconds == 0):
+        screen_display_window.blit(zastavka, (0, 0))
         txt_objects('Игра окончена', fontsize, screen_display_window, (screen_width / 3), (screen_height / 3))
         txt_objects('Нажмите любую клавишу для начала игры', fontsize, screen_display_window, (screen_width / 3) - 80,
                     (screen_height / 3) + 30)
